@@ -2,10 +2,15 @@
   <h1>{{headerStr}}</h1>
   <div id="background">
     <div class="row" *ngFor="let row of gridView; let rowIndex = index">
-      <div (click)="playTurn(rowIndex, colIndex)" class="cell" *ngFor="let cel of row; let colIndex = index">
-      <p>{{cel}}</p>
+      <div class="cell" *ngFor="let cel of row; let colIndex = index">
+        <div *ngIf="cel === ''" (click)="playTurn(rowIndex, colIndex)" class="cell-container clickable">
+          <p>{{cel}}</p>
+        </div>
+        <div *ngIf="cel !== ''" class="cell-container">
+          <p>{{cel}}</p>
+        </div>  
       </div>
     </div>
   </div>
-  <p id="restartGame" (click)=restartGame()>RESTART GAME</p>
+  <p id="restartGame" class="clickable" (click)=restartGame()>RESTART GAME</p>
 </div>
