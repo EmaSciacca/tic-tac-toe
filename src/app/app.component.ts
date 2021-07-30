@@ -49,14 +49,14 @@ export class AppComponent {
     const hasWinner = this.computeWinner(rowIndex, colIndex);
     if (hasWinner) {
       this.winner = this.currPlayer;
-      this.headerStr = this.winner + " WINS";
+      this.headerStr = "Game Over";
       return;
     }
 
     this.turnNum++;
     if (this.turnNum === 10) {
       this.winner = "DRAW";
-      this.headerStr = this.winner;
+      this.headerStr = "Game Over";
       return;
     }
 
