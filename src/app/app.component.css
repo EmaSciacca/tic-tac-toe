@@ -4,7 +4,13 @@
     text-align: center;
 }
 
+#grid-container {
+    width: 100%;
+    height: 100%;
+}
+
 #background {
+    position: relative;
     display: inline-block;
     width: 70vh;
     height: 70vh;
@@ -38,6 +44,16 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin: 0%;
+}
+
+.winner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 4em;
     margin: 0%;
 }
 

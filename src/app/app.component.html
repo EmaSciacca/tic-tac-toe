@@ -1,15 +1,25 @@
 <div id="container">
   <h1>{{headerStr}}</h1>
   <div id="background">
-    <div class="row" *ngFor="let row of gridView; let rowIndex = index">
-      <div class="cell" *ngFor="let cel of row; let colIndex = index">
-        <div *ngIf="cel === ''" (click)="playTurn(rowIndex, colIndex)" class="cell-container clickable">
-          <p>{{cel}}</p>
+    <div id="grid-container" *ngIf="winner === ''">
+      <div class="row" *ngFor="let row of gridView; let rowIndex = index">
+        <div class="cell" *ngFor="let cel of row; let colIndex = index">
+          <div *ngIf="cel === ''" (click)="playTurn(rowIndex, colIndex)" class="cell-container clickable">
+            <p>{{cel}}</p>
+          </div>
+          <div *ngIf="cel !== ''" class="cell-container">
+            <p>{{cel}}</p>
+          </div>  
         </div>
-        <div *ngIf="cel !== ''" class="cell-container">
-          <p>{{cel}}</p>
-        </div>  
       </div>
+    </div>
+
+    <div *ngIf="winner === 'X' || winner === 'O'">
+      <p class="winner">{{winner}} WINS</p>
+    </div>
+
+    <div *ngIf="winner === 'DRAW'">
+      <p class="winner">X & Y DRAW</p>
     </div>
   </div>
   <p id="restartGame" class="clickable" (click)=restartGame()>RESTART GAME</p>

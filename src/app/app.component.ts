@@ -133,6 +133,7 @@ export class AppComponent {
     this.initializeGridView();
     this.winnableCombs = WINNING_COMBINATIONS.slice();
     this.winner = "";
+    this.headerStr = this.currPlayer + " Turn";
   }
 
   private initializeGridView() {
