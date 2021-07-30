@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   // Header string
   headerStr = "X Turn";
+
+  restartGame() {
+    console.log("restartGame invoked");
+  }
 }
