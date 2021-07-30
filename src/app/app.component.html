@@ -3,7 +3,7 @@
   <div id="background">
     <div class="row" *ngFor="let row of gridView; let rowIndex = index">
       <div (click)="playTurn(rowIndex, colIndex)" class="cell" *ngFor="let cel of row; let colIndex = index">
-        {{cel}}
+      <p>{{cel}}</p>
       </div>
     </div>
   </div>

@@ -24,11 +24,18 @@ export class AppComponent {
   }
 
   playTurn(rowIndex: number, colIndex: number) {
-    console.log("Player " + this.currPlayer + " played at (" + rowIndex + ", " + colIndex + ")");
+    console.log("Player " + this.currPlayer + " played at (" + rowIndex + ", " + colIndex + ") at turn " + this.turnNum);
+    this.gridView[rowIndex][colIndex] = this.currPlayer;
+    this.currPlayer = this.currPlayer === "X" ? "O" : "X";
+    this.headerStr = this.currPlayer + " Turn";
+    this.turnNum++; 
   }
 
   restartGame() {
     console.log("restartGame invoked");
+    this.turnNum = 1;
+    this.currPlayer = "X";
+    this.initializeGridView();
   }
 
   private initializeGridView() {
