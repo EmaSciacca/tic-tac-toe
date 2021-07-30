@@ -10,7 +10,7 @@ const WINNING_COMBINATIONS = [
   "0,1-1,1-2,1",
   "0,2-1,2-2,2",
   "0,0-1,1-2,2",
-  "0,2-1,1-2,1"
+  "0,2-1,1-2,0"
 ];
 
 @Component({
@@ -94,6 +94,8 @@ export class AppComponent {
 
       if (!emptyFound && !toDelete) {
         // if every other cell in the combination was filled by same player we have a winner
+        console.log("Player " + this.currPlayer + " winning with " + remCombStr);
+        console.log(this.gridView);
         return true;
       }
 
