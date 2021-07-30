@@ -6,10 +6,23 @@
 
 #background {
     display: inline-block;
-    margin-top: 5vh;
     width: 70vh;
     height: 70vh;
     background-color: turquoise;
+}
+
+.row {
+    margin: 0%;
+    height: 33.3%;
+    width: 100%;
+}
+
+.cell {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 33.3%;
+    height: 100%;
+    border: 0.25em solid black;
 }
 
 #restartGame {

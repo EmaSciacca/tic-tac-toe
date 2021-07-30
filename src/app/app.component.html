@@ -1,7 +1,11 @@
 <div id="container">
   <h1>{{headerStr}}</h1>
   <div id="background">
-
+    <div class="row" *ngFor="let row of gridView; let rowIndex = index">
+      <div (click)="playTurn(rowIndex, colIndex)" class="cell" *ngFor="let cel of row; let colIndex = index">
+        {{cel}}
+      </div>
+    </div>
   </div>
   <p id="restartGame" (click)=restartGame()>RESTART GAME</p>
 </div>
