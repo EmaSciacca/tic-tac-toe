@@ -94,17 +94,17 @@ export class AppComponent {
 
       if (!emptyFound && !toDelete) {
         // if every other cell in the combination was filled by same player we have a winner
-        console.log("Player " + this.currPlayer + " winning with " + remCombStr);
-        console.log(this.gridView);
+        console.debug("Player " + this.currPlayer + " winning with " + remCombStr);
+        console.debug(this.gridView);
         return true;
       }
 
       if (toDelete) {
         // delete current combination because not winnable
-        console.log("Removing " + remCombStr);
+        console.debug("Removing " + remCombStr);
         const remIndex = this.winnableCombs.indexOf(remCombStr);
         this.winnableCombs.splice(remIndex, 1);
-        console.log("Remaining winnable combs: " + this.winnableCombs);
+        console.debug("Remaining winnable combs: " + this.winnableCombs);
       }
     } 
     return false;
@@ -129,7 +129,6 @@ export class AppComponent {
   }
 
   restartGame() {
-    console.log("restartGame invoked");
     this.turnNum = 1;
     this.currPlayer = "X";
     this.initializeGridView();
