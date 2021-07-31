@@ -28,7 +28,6 @@
     display: inline-block;
     width: 33.3%;
     height: 100%;
-    /*border: 0.25em solid black;*/
 }
 
 .cell-container {
@@ -97,4 +96,19 @@
 
 .clickable:hover {
     cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    #background {
+        width: 70vw;
+        height: 70vw;
+    }
+
+    .vert-line {
+        height: 70vw;
+    }
+
+    .horiz-line {
+        width: 70vw;
+    }
 }
