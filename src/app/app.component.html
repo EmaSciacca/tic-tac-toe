@@ -4,7 +4,7 @@
     <div id="grid-container" *ngIf="winner === '' || showGridEnd">
       <div class="row" *ngFor="let row of gridView; let rowIndex = index">
         <div class="cell" *ngFor="let cel of row; let colIndex = index">
-          <div *ngIf="cel === ''" (click)="playTurn(rowIndex, colIndex)" class="cell-container clickable">
+          <div *ngIf="cel === '' && winner === ''" (click)="playTurn(rowIndex, colIndex)" class="cell-container clickable">
             <p>{{cel}}</p>
           </div>
           <div *ngIf="cel !== ''" class="cell-container">
