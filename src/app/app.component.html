@@ -18,15 +18,10 @@
       <div id="sec-horizontal-line" class="horiz-line line"></div>
     </div>
 
-    <div *ngIf="(winner === 'X' || winner === 'O') && !showGridEnd">
-      <p class="winner">{{winner}} WINS</p>
-      <p class="show-grid clickable" (click)=showGrid()>Show grid</p>
-    </div>
-
-    <div *ngIf="winner === 'DRAW' && !showGridEnd">
-      <p class="winner">X & O DRAW</p>
-      <p class="show-grid clickable" (click)=showGrid()>Show grid</p>
-    </div>
+    <p *ngIf="(winner === 'X' || winner === 'O') && !showGridEnd" class="winner">{{winner}} WINS</p>
+    <p *ngIf="winner === 'DRAW' && !showGridEnd" class="winner">X & O DRAW</p>
+    <p *ngIf="winner !== '' && !showGridEnd" class="show-grid clickable" (click)=showGrid()>Show grid</p>
+            
   </div>
   <p id="restartGame" class="clickable" (click)=restartGame()>RESTART GAME</p>
 </div>
