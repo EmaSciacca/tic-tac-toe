@@ -1,7 +1,7 @@
 <div id="container">
   <h1>{{headerStr}}</h1>
   <div id="background">
-    <div id="grid-container" *ngIf="winner === ''">
+    <div id="grid-container" *ngIf="winner === '' || showGridEnd">
       <div class="row" *ngFor="let row of gridView; let rowIndex = index">
         <div class="cell" *ngFor="let cel of row; let colIndex = index">
           <div *ngIf="cel === ''" (click)="playTurn(rowIndex, colIndex)" class="cell-container clickable">
@@ -18,12 +18,14 @@
       <div id="sec-horizontal-line" class="horiz-line line"></div>
     </div>
 
-    <div *ngIf="winner === 'X' || winner === 'O'">
+    <div *ngIf="(winner === 'X' || winner === 'O') && !showGridEnd">
       <p class="winner">{{winner}} WINS</p>
+      <p class="show-grid clickable" (click)=showGrid()>Show grid</p>
     </div>
 
-    <div *ngIf="winner === 'DRAW'">
+    <div *ngIf="winner === 'DRAW' && !showGridEnd">
       <p class="winner">X & O DRAW</p>
+      <p class="show-grid clickable" (click)=showGrid()>Show grid</p>
     </div>
   </div>
   <p id="restartGame" class="clickable" (click)=restartGame()>RESTART GAME</p>
