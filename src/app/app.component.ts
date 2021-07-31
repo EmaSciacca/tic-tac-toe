@@ -24,7 +24,10 @@ export class AppComponent {
   headerStr: string;
   // grid view
   gridView: string[][];
+  // winner name
   winner: string;
+  // flag to show grid after win
+  showGridEnd: boolean;
   // turn number (1-9)
   private turnNum: number;
   // current player
@@ -41,6 +44,7 @@ export class AppComponent {
     // Copy by value
     this.winnableCombs = WINNING_COMBINATIONS.slice();
     this.winner = '';
+    this.showGridEnd = false;
   }
 
   playTurn(rowIndex: number, colIndex: number) {
@@ -135,6 +139,11 @@ export class AppComponent {
     this.winnableCombs = WINNING_COMBINATIONS.slice();
     this.winner = "";
     this.headerStr = this.currPlayer + " Turn";
+    this.showGridEnd = false;
+  }
+
+  showGrid() {
+    this.showGridEnd = true;
   }
 
   private initializeGridView() {

@@ -89,6 +89,15 @@
     margin: 0%;
 }
 
+.show-grid {
+    position: absolute;
+    bottom: 7.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.25em;
+    color: grey;
+} 
+
 #restartGame {
     font-weight: bold;
     font-size: 2em;
